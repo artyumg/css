@@ -25,8 +25,18 @@
     line-height: var(--lineHeightNormal);
 } 
 
-/* Container Level Padding */
-#ashby_embed,
+/* Top Level Container */
+#ashby_embed {
+    margin-top: 24px !important;
+    padding-left: var(--basePadding);
+    padding-right: var(--basePadding);
+    width: 100%;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Other Container Level Padding */
 .ashby-job-board-container,
 .ashby-application-form-container,
 .ashby-job-posting-container,
