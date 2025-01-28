@@ -1,16 +1,26 @@
-/* Font Import */
+/* Font Import - Add display swap for better loading */
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap');
 
 /* Ensure proper font loading */
 @font-face {
     font-family: 'General Sans';
+    src: url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500') format('woff2');
     font-display: swap;
+    font-weight: 400;
 }
 
-/* Add scroll behavior control */
+@font-face {
+    font-family: 'General Sans';
+    src: url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500') format('woff2');
+    font-display: swap;
+    font-weight: 500;
+}
+
+/* Force scroll position */
 html {
     scroll-behavior: auto !important;
     overflow-x: hidden;
+    scroll-padding-top: 0 !important;
 }
 
 html, body { 
@@ -18,21 +28,16 @@ html, body {
     padding: 0; 
     width: 100%;
     min-height: 100%;
-    overflow-anchor: none; /* Prevents browser from automatically adjusting scroll position */
-} 
-
-.parent-container { 
-    margin: 0; 
-    padding: 0; 
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
+    overflow-anchor: none;
+    font-family: 'General Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
 } 
 
 /* Root Variables */ 
 :root { 
-    --fontFamily: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --fontFamily: 'General Sans', sans-serif;
     --borderRadiusContainer: 10px; 
     --borderRadiusControl: 10px; 
     --borderRadiusButton: 10px; 
@@ -40,9 +45,7 @@ html, body {
     --colorPrimary: #333333; 
     --colorSecondary: #6b6b6b; 
     --colorBackground: #ffffff; 
-    --colorBorder: #d8d8d8; 
-    --colorButtonBackground: #333333; 
-    --colorButtonHover: #6b6b6b; 
+    --colorBorder: rgba(216, 216, 216, 0.80);
 } 
 
 /* Global Styles */ 
@@ -51,44 +54,16 @@ html, body {
     padding: 0; 
     box-sizing: border-box; 
     font-family: var(--fontFamily); 
-    font-weight: 500; 
 } 
 
-body, input, select, textarea, button { 
-    font-family: var(--fontFamily); 
-} 
-
-/* Add properties to all divs */ 
-div { 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-} 
-
-#ashby_embed, 
-.ashby-job-board-container, 
-.ashby-job-posting-brief, 
-.ashby-job-board-filters-label { 
-    text-align: left; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    width: 100%; 
-} 
-
-body, 
-#ashby_embed, 
-.ashby-job-board-container { 
-    text-align: left !important; 
-} 
-
-/* Embed Container */ 
+/* Embed Container with fixed positioning */ 
 #ashby_embed { 
     width: 100%;
     position: relative;
-    top: 0;
-    left: 0;
+    top: 0 !important;
+    left: 0 !important;
     overflow-anchor: none;
+    transform: none !important;
 } 
 
 /* Job Board Container */ 
@@ -96,51 +71,31 @@ body,
     width: 100%; 
     background-color: var(--colorBackground);
     position: relative;
-    top: 0;
-    left: 0;
+    top: 0 !important;
+    left: 0 !important;
 } 
 
 /* Open Positions Heading */ 
 .ashby-job-board-heading { 
     font-family: var(--fontFamily); 
-    font-size: 28px; 
-    font-weight: 500; 
+    font-size: 28px !important; 
+    font-weight: 500 !important; 
     color: var(--colorPrimary); 
-    margin-bottom: 16px; 
-} 
-
-/* Job Board Filters Label */ 
-.ashby-job-board-filters-label { 
-    font-size: 16px; 
-    color: var(--colorPrimary); 
-    font-weight: 500; 
-    margin-bottom: 0px; 
-    display: block; 
-} 
-
-/* Job Board Filters Group */ 
-.ashby-job-board-filter-group { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 8px; 
-    margin-bottom: 16px; 
+    margin-bottom: 16px;
+    line-height: 1.2;
 } 
 
 /* Dropdown Styles */ 
 .ashby-job-board-filter { 
     font-size: 16px; 
-    border-radius: var(--borderRadiusControl); 
-    border: 0.5px solid var(--colorBorder); 
-    background: var(--colorBackground); 
+    border-radius: 10px; 
+    border: 1px solid var(--colorBorder); 
+    background: #FFF;
+    backdrop-filter: blur(30px);
     color: var(--colorPrimary); 
     width: 100%; 
-    cursor: pointer; 
-} 
-
-.ashby-job-board-filter:hover, 
-.ashby-job-board-filter:focus { 
-    border-color: var(--colorPrimary); 
-    outline: none; 
+    cursor: pointer;
+    font-weight: 400;
 } 
 
 /* Department Heading */ 
@@ -151,69 +106,87 @@ body,
     margin: 32px 0 24px 0; 
 } 
 
+/* Job Posting Container and Detail Views */
+.ashby-job-posting-container,
+.ashby-job-posting-detail,
+.ashby-application-form-container {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    overflow-anchor: none;
+    transform: none !important;
+}
+
 /* Job Posting Brief Container */ 
 .ashby-job-posting-brief { 
-    border-bottom: 0.5px solid var(--colorBorder); 
+    border-bottom: 1px solid var(--colorBorder);
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
 } 
 
-/* Job Posting Container and Detail Views */
-.ashby-job-posting-container {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow-anchor: none;
-}
-
-.ashby-job-posting-detail {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow-anchor: none;
-}
-
-/* Job Posting Title - Smaller Titles */ 
+/* Job Posting Title */ 
 .ashby-job-posting-brief-title { 
     font-size: 20px; 
     font-weight: 500; 
     color: var(--colorPrimary); 
-    margin-bottom: 0px; 
+    margin-bottom: 0; 
     line-height: 1.5; 
 } 
 
-/* Job Posting Details - Smallest Titles */ 
+/* Job Posting Details */ 
 .ashby-job-posting-brief-details { 
     font-size: 16px; 
-    font-weight: 500; 
+    font-weight: 400; 
     color: var(--colorSecondary); 
     line-height: 1.5; 
     display: flex; 
     flex-direction: column; 
 } 
 
-/* Remove any potential text-align properties and ensure left alignment */ 
+/* Form elements */
+input, select, textarea, button { 
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    font-size: 16px;
+} 
+
+/* Force left alignment and prevent scroll jumps */ 
 #ashby_embed *, 
 .ashby-job-board-container *, 
 .ashby-job-posting-brief *, 
 .ashby-job-posting-brief-details *,
-.ashby-job-posting-detail * { 
+.ashby-job-posting-detail *,
+.ashby-application-form-container * { 
     text-align: left !important;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis;
     scroll-behavior: auto !important;
     overflow-anchor: none;
+    transform: none !important;
 } 
 
-/* Ensure no extra padding or margins */ 
+/* Application Form Specific Styles */
+.ashby-application-form-question-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--colorPrimary);
+}
+
+.ashby-application-form-section-header-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--colorPrimary);
+    margin-bottom: 16px;
+}
+
+/* Remove default margins */ 
 .ashby-job-board-container > *, 
 .ashby-job-posting-brief > *, 
 .ashby-job-posting-brief-details > * { 
     margin: 0; 
 } 
 
-/* Adjust spacing between elements */ 
+/* Spacing adjustments */ 
 .ashby-job-posting-brief-title, 
 .ashby-job-posting-brief-details > *:not(:last-child) { 
     margin-bottom: 4px; 
