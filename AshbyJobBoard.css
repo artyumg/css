@@ -1,87 +1,105 @@
-/* Font Import */
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500&display=swap');
 
 /* Override root variables to ensure our styles take precedence */
 :root { 
     --fontFamily: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    --ashby-font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     --borderRadiusContainer: 10px; 
     --borderRadiusControl: 10px; 
     --borderRadiusButton: 10px; 
-    --widthMaxJobBoard: 800px; /* Match Ashby's default width */
+    --widthMaxJobBoard: 800px;
     --colorPrimary: #333333;
     --colorSecondary: #6b6b6b;
     --colorBackground: #ffffff;
     --colorBorder: rgba(216, 216, 216, 0.80);
     --colorAppBackground: #ffffff;
-    /* Override Ashby's theme colors */
     --colorPrimary900: #333333;
     --colorPrimary600: #333333;
 } 
 
-/* Global font overrides */
-html, 
-body,
-#ashby_embed,
-.ashby-job-board-container,
-.ashby-application-form-container,
-.ashby-job-posting-container {
+/* Global font overrides with increased specificity */
+html body,
+html body #ashby_embed,
+html body .ashby-job-board-container,
+html body .ashby-application-form-container,
+html body .ashby-job-posting-container,
+html body .ashby-job-board-container *,
+html body .ashby-application-form-container *,
+html body .ashby-job-posting-container * {
     font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     -webkit-font-smoothing: antialiased;
+    font-weight: 500 !important;
 }
 
-/* Force all elements to use our font */
-* { 
+/* Specific element overrides */
+html body .ashby-job-board-heading,
+html body .ashby-department-heading,
+html body .ashby-job-posting-brief-department-heading,
+html body .ashby-application-form-section-header-title,
+html body .ashby-job-posting-brief-title,
+html body .ashby-job-posting-brief-details,
+html body .ashby-application-form-question-title,
+html body .ashby-application-form-question-description,
+html body .ashby-job-board-filters-label,
+html body .ashby-job-board-filter,
+html body input, 
+html body select, 
+html body textarea, 
+html body button {
     font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-} 
+    font-weight: 500 !important;
+}
+
+/* Additional overrides for potential Ashby classes */
+html body .ashby-text,
+html body .ashby-heading,
+html body .ashby-subheading,
+html body .ashby-button,
+html body .ashby-input,
+html body .ashby-select,
+html body .ashby-textarea {
+    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 500 !important;
+}
 
 /* Main headings - "Open Positions" */
-.ashby-job-board-heading { 
-    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+html body .ashby-job-board-heading { 
     font-size: 28px !important; 
-    font-weight: 500 !important; 
     color: #333333 !important;
     margin-bottom: 16px;
     line-height: 1.2;
 } 
 
 /* Department headings */
-.ashby-department-heading,
-.ashby-job-posting-brief-department-heading,
-.ashby-application-form-section-header-title { 
-    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+html body .ashby-department-heading,
+html body .ashby-job-posting-brief-department-heading,
+html body .ashby-application-form-section-header-title { 
     font-size: 28px !important; 
-    font-weight: 500 !important; 
     color: #333333 !important;
     margin: 32px 0 24px 0; 
 } 
 
 /* Job titles */
-.ashby-job-posting-brief-title { 
-    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+html body .ashby-job-posting-brief-title { 
     font-size: 20px !important; 
-    font-weight: 500 !important; 
     color: #333333 !important;
     margin-bottom: 0px; 
     line-height: 1.5; 
 } 
 
 /* Body text and details */
-.ashby-job-posting-brief-details,
-.ashby-application-form-question-title,
-.ashby-application-form-question-description,
-.ashby-job-board-filters-label { 
-    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+html body .ashby-job-posting-brief-details,
+html body .ashby-application-form-question-title,
+html body .ashby-application-form-question-description,
+html body .ashby-job-board-filters-label { 
     font-size: 16px !important; 
-    font-weight: 400 !important; 
     color: #333333 !important;
     line-height: 1.5; 
 } 
 
 /* Dropdown styling */
-.ashby-job-board-filter { 
-    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+html body .ashby-job-board-filter { 
     font-size: 16px !important; 
-    font-weight: 400 !important;
     border-radius: 10px !important; 
     border: 1px solid rgba(216, 216, 216, 0.80) !important; 
     background: #FFF !important;
@@ -89,17 +107,6 @@ body,
     color: #333333 !important;
     width: 100%; 
     cursor: pointer;
-} 
-
-/* Form elements */
-input, 
-select, 
-textarea, 
-button { 
-    font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-    font-weight: 400 !important;
-    font-size: 16px !important;
-    color: #333333 !important;
 } 
 
 /* Positioning fixes */
