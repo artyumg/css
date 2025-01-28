@@ -7,16 +7,27 @@
     font-display: swap;
 }
 
+/* Add scroll behavior control */
+html {
+    scroll-behavior: auto !important;
+    overflow-x: hidden;
+}
+
 html, body { 
     margin: 0; 
     padding: 0; 
-    width: 100%; 
+    width: 100%;
+    min-height: 100%;
+    overflow-anchor: none; /* Prevents browser from automatically adjusting scroll position */
 } 
 
 .parent-container { 
     margin: 0; 
     padding: 0; 
-    width: 100%; 
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
 } 
 
 /* Root Variables */ 
@@ -73,13 +84,20 @@ body,
 
 /* Embed Container */ 
 #ashby_embed { 
-    width: 100%; 
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-anchor: none;
 } 
 
 /* Job Board Container */ 
 .ashby-job-board-container { 
     width: 100%; 
-    background-color: var(--colorBackground); 
+    background-color: var(--colorBackground);
+    position: relative;
+    top: 0;
+    left: 0;
 } 
 
 /* Open Positions Heading */ 
@@ -138,6 +156,23 @@ body,
     border-bottom: 0.5px solid var(--colorBorder); 
 } 
 
+/* Job Posting Container and Detail Views */
+.ashby-job-posting-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-anchor: none;
+}
+
+.ashby-job-posting-detail {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-anchor: none;
+}
+
 /* Job Posting Title - Smaller Titles */ 
 .ashby-job-posting-brief-title { 
     font-size: 20px; 
@@ -157,15 +192,18 @@ body,
     flex-direction: column; 
 } 
 
-/* Remove any potential text-align properties */ 
+/* Remove any potential text-align properties and ensure left alignment */ 
 #ashby_embed *, 
 .ashby-job-board-container *, 
 .ashby-job-posting-brief *, 
-.ashby-job-posting-brief-details * { 
-    text-align: left; 
+.ashby-job-posting-brief-details *,
+.ashby-job-posting-detail * { 
+    text-align: left !important;
     white-space: nowrap; 
     overflow: hidden; 
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
+    scroll-behavior: auto !important;
+    overflow-anchor: none;
 } 
 
 /* Ensure no extra padding or margins */ 
