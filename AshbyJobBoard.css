@@ -75,10 +75,8 @@ textarea {
 }
 
 /* Top Title Styling */
-._titles_ud4nd_34,
-.ashby-job-board-heading {
-    margin-top: 24px !important;
-    padding-left: 16px !important;
+._title_ud4nd_34.ashby-job-board-heading {
+    margin-left: 24px !important;
     font-size: 28px !important;
     font-weight: 500 !important;
     color: #333333 !important;
