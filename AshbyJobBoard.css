@@ -132,8 +132,16 @@ textarea {
 /* Button Styling */
 button,
 .ashby-application-form-submit-button,
-.ashby-job-board-back-to-all-jobs-button {
-    font-family: var(--fontFamily);
+.ashby-job-board-back-to-all-jobs-button,
+.ashby-application-form-autofill-input-base-layer button,
+.ashby-application-form-autofill-uploader button,
+.ashby-application-form-blocked-application-container button,
+.ashby-application-form-field-entry button,
+.ashby-job-board-filter button,
+.ashby-job-posting-right-pane-application-tab button,
+.ashby-job-posting-right-pane-overview-tab button,
+.ashby-survey-form-container button {
+    font-family: var(--fontFamily) !important;
     font-weight: 400 !important;
     font-size: 16px !important;
     color: #ffffff !important;
@@ -142,13 +150,30 @@ button,
     border: none !important;
     padding: 12px 24px !important;
     cursor: pointer !important;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease !important;
 }
 
 button:hover,
 .ashby-application-form-submit-button:hover,
-.ashby-job-board-back-to-all-jobs-button:hover {
+.ashby-job-board-back-to-all-jobs-button:hover,
+.ashby-application-form-autofill-input-base-layer button:hover,
+.ashby-application-form-autofill-uploader button:hover,
+.ashby-application-form-blocked-application-container button:hover,
+.ashby-application-form-field-entry button:hover,
+.ashby-job-board-filter button:hover,
+.ashby-job-posting-right-pane-application-tab button:hover,
+.ashby-job-posting-right-pane-overview-tab button:hover,
+.ashby-survey-form-container button:hover {
     background-color: #4a4a4a !important;
+}
+
+/* Reset filters link styling - if it's a link rather than a button */
+.ashby-job-board-reset-filters-label {
+    color: #333333 !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
 }
 
 /* Positioning Control */
