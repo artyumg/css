@@ -1,175 +1,182 @@
-
+/* Font Import */
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap');
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+/* Ensure proper font loading */
+@font-face {
+    font-family: 'General Sans';
+    font-display: swap;
 }
 
-.parent-container {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
+html, body { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+} 
 
-/* Root Variables */
-:root {
-  --fontFamily: "General Sans", sans-serif;
-  --borderRadiusContainer: 10px;
-  --borderRadiusControl: 10px;
-  --borderRadiusButton: 10px;
-  --widthMaxJobBoard: 100%;
-  --colorPrimary: #333333;
-  --colorSecondary: #6b6b6b;
-  --colorBackground: #ffffff;
-  --colorBorder: #d8d8d8;
-  --colorButtonBackground: #333333;
-  --colorButtonHover: #6b6b6b;
-}
+.parent-container { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+} 
 
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--fontFamily);
-  font-weight: 500;
-}
+/* Root Variables */ 
+:root { 
+    --fontFamily: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --borderRadiusContainer: 10px; 
+    --borderRadiusControl: 10px; 
+    --borderRadiusButton: 10px; 
+    --widthMaxJobBoard: 100%; 
+    --colorPrimary: #333333; 
+    --colorSecondary: #6b6b6b; 
+    --colorBackground: #ffffff; 
+    --colorBorder: #d8d8d8; 
+    --colorButtonBackground: #333333; 
+    --colorButtonHover: #6b6b6b; 
+} 
 
-body, input, select, textarea, button {
-  font-family: var(--fontFamily);
-}
+/* Global Styles */ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: var(--fontFamily); 
+    font-weight: 500; 
+} 
 
-/* Add properties to all divs */
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
+body, input, select, textarea, button { 
+    font-family: var(--fontFamily); 
+} 
 
-#ashby_embed,
-.ashby-job-board-container,
-.ashby-job-posting-brief,
-.ashby-job-board-filters-label {
-  text-align: left;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-}
+/* Add properties to all divs */ 
+div { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+} 
 
-body, #ashby_embed, .ashby-job-board-container {
-  text-align: left !important;
-}
+#ashby_embed, 
+.ashby-job-board-container, 
+.ashby-job-posting-brief, 
+.ashby-job-board-filters-label { 
+    text-align: left; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    width: 100%; 
+} 
 
-/* Embed Container */
-#ashby_embed {
-  width: 100%;
-}
+body, 
+#ashby_embed, 
+.ashby-job-board-container { 
+    text-align: left !important; 
+} 
 
-/* Job Board Container */
-.ashby-job-board-container {
-  width: 100%;
-  background-color: var(--colorBackground);
-}
+/* Embed Container */ 
+#ashby_embed { 
+    width: 100%; 
+} 
 
-/* Open Positions Heading */
-.ashby-job-board-heading {
-  font-family: var(--fontFamily);
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--colorPrimary);
-  margin-bottom: 16px;
-}
+/* Job Board Container */ 
+.ashby-job-board-container { 
+    width: 100%; 
+    background-color: var(--colorBackground); 
+} 
 
-/* Job Board Filters Label */
-.ashby-job-board-filters-label {
-  font-size: 16px;
-  color: var(--colorPrimary);
-  font-weight: 500;
-  margin-bottom: 0px;
-  display: block;
-}
+/* Open Positions Heading */ 
+.ashby-job-board-heading { 
+    font-family: var(--fontFamily); 
+    font-size: 28px; 
+    font-weight: 500; 
+    color: var(--colorPrimary); 
+    margin-bottom: 16px; 
+} 
 
-/* Job Board Filters Group */
-.ashby-job-board-filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
-}
+/* Job Board Filters Label */ 
+.ashby-job-board-filters-label { 
+    font-size: 16px; 
+    color: var(--colorPrimary); 
+    font-weight: 500; 
+    margin-bottom: 0px; 
+    display: block; 
+} 
 
-/* Dropdown Styles */
-.ashby-job-board-filter {
-  font-size: 16px;
-  border-radius: var(--borderRadiusControl);
-  border: 0.5px solid var(--colorBorder);
-  background: var(--colorBackground);
-  color: var(--colorPrimary);
-  width: 100%;
-  cursor: pointer;
-}
+/* Job Board Filters Group */ 
+.ashby-job-board-filter-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    margin-bottom: 16px; 
+} 
 
-.ashby-job-board-filter:hover,
-.ashby-job-board-filter:focus {
-  border-color: var(--colorPrimary);
-  outline: none;
-}
+/* Dropdown Styles */ 
+.ashby-job-board-filter { 
+    font-size: 16px; 
+    border-radius: var(--borderRadiusControl); 
+    border: 0.5px solid var(--colorBorder); 
+    background: var(--colorBackground); 
+    color: var(--colorPrimary); 
+    width: 100%; 
+    cursor: pointer; 
+} 
 
-/* Department Heading */
-.ashby-department-heading {
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--colorPrimary);
-  margin: 32px 0 24px 0;
-}
+.ashby-job-board-filter:hover, 
+.ashby-job-board-filter:focus { 
+    border-color: var(--colorPrimary); 
+    outline: none; 
+} 
 
-/* Job Posting Brief Container */
-.ashby-job-posting-brief {
-  border-bottom: 0.5px solid var(--colorBorder);
-}
+/* Department Heading */ 
+.ashby-department-heading { 
+    font-size: 28px; 
+    font-weight: 500; 
+    color: var(--colorPrimary); 
+    margin: 32px 0 24px 0; 
+} 
 
-/* Job Posting Title - Smaller Titles */
-.ashby-job-posting-brief-title {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--colorPrimary);
-  margin-bottom: 0px;
-  line-height: 1.5;
-}
+/* Job Posting Brief Container */ 
+.ashby-job-posting-brief { 
+    border-bottom: 0.5px solid var(--colorBorder); 
+} 
 
-/* Job Posting Details - Smallest Titles */
-.ashby-job-posting-brief-details {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--colorSecondary);
-  line-height: 1.5;
-  display: flex;
-  flex-direction: column;
-}
+/* Job Posting Title - Smaller Titles */ 
+.ashby-job-posting-brief-title { 
+    font-size: 20px; 
+    font-weight: 500; 
+    color: var(--colorPrimary); 
+    margin-bottom: 0px; 
+    line-height: 1.5; 
+} 
 
-/* Remove any potential text-align properties */
-#ashby_embed *,
-.ashby-job-board-container *,
-.ashby-job-posting-brief *,
-.ashby-job-posting-brief-details * {
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/* Job Posting Details - Smallest Titles */ 
+.ashby-job-posting-brief-details { 
+    font-size: 16px; 
+    font-weight: 500; 
+    color: var(--colorSecondary); 
+    line-height: 1.5; 
+    display: flex; 
+    flex-direction: column; 
+} 
 
-/* Ensure no extra padding or margins */
-.ashby-job-board-container > *,
-.ashby-job-posting-brief > *,
-.ashby-job-posting-brief-details > * {
-  margin: 0;
-}
+/* Remove any potential text-align properties */ 
+#ashby_embed *, 
+.ashby-job-board-container *, 
+.ashby-job-posting-brief *, 
+.ashby-job-posting-brief-details * { 
+    text-align: left; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+} 
 
-/* Adjust spacing between elements */
-.ashby-job-posting-brief-title,
-.ashby-job-posting-brief-details > *:not(:last-child) {
-  margin-bottom: 4px;
-}
+/* Ensure no extra padding or margins */ 
+.ashby-job-board-container > *, 
+.ashby-job-posting-brief > *, 
+.ashby-job-posting-brief-details > * { 
+    margin: 0; 
+} 
 
+/* Adjust spacing between elements */ 
+.ashby-job-posting-brief-title, 
+.ashby-job-posting-brief-details > *:not(:last-child) { 
+    margin-bottom: 4px; 
+}
