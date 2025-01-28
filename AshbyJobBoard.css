@@ -33,7 +33,52 @@ html body .ashby-job-posting-container * {
     padding: 0;
 }
 
-/* Layout and Spacing Mimicking Y Combinator */
+/* Layout and Spacing */
+#ashby_embed {
+    width: 100%;
+    height: 100%; /* Ensure the container spans the full height */
+    margin: 0;
+    padding: 0;
+    text-align: left !important;
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: relative;
+}
+
+#ashby_embed iframe,
+#ashby_embed > div,
+#ashby_embed * {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    overflow: visible !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+#ashby_embed iframe,
+#ashby_embed > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+#ashby_embed_container,
+.ashby-job-board-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+    transform: none !important;
+    position: relative !important;
+    top: 0 !important; /* Start from the top */
+    left: 0 !important; /* Start from the left */
+}
+
 .ashby-job-board-container {
     display: flex;
     flex-direction: column;
@@ -64,7 +109,7 @@ html body .ashby-job-posting-container * {
     display: flex;
     flex-direction: column;
     width: 100%;
-height: auto;
+    height: auto; /* Ensure height fits the content */
     margin-bottom: 24px;
     border: 1px solid var(--colorBorder);
     border-radius: var(--borderRadiusContainer);
@@ -143,7 +188,7 @@ textarea.ashby-textarea {
     font-family: 'General Sans', sans-serif;
 }
 
-/* Footer Mimicking Y Combinator */
+/* Footer */
 .ashby-footer {
     text-align: center;
     padding: 16px;
