@@ -8,7 +8,7 @@
     --borderRadiusContainer: 8px;
     --borderRadiusControl: 8px;
     --borderRadiusButton: 8px;
-    --widthMaxJobBoard: 800px;
+    --widthMaxJobBoard: 100%;
     /* Colors retained from original */
     --colorPrimary: #333333;
     --colorSecondary: #6b6b6b;
