@@ -64,6 +64,7 @@ html body .ashby-job-posting-container * {
     display: flex;
     flex-direction: column;
     width: 100%;
+height: auto;
     margin-bottom: 24px;
     border: 1px solid var(--colorBorder);
     border-radius: var(--borderRadiusContainer);
