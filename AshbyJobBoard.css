@@ -151,7 +151,7 @@ textarea.ashby-textarea {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .ashby-job-board-container {
         padding: 16px;
     }
