@@ -71,6 +71,7 @@ textarea {
     color: #333333 !important;
     margin-bottom: var(--basePadding);
     padding-top: var(--basePadding);
+    padding-left: 16px !important;
 } 
 
 /* Department Headings */
